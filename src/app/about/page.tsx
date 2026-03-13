@@ -19,7 +19,8 @@ export default function AboutPage() {
         variant="narrow"
         title="About Present Heart Living"
         subtitle="A yoga and Pilates practice rooted in awareness, set in the heart of the Scottish Highlands"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600&h=900&fit=crop"
+        imageAlt="Yoga and wellness practice"
       />
       <Breadcrumbs items={[{ name: 'About', url: '/about' }]} />
 

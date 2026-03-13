@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 };
 
 const classes = [
-  { title: 'Seasonal Flow Yoga', description: 'A dynamic practice blending Hatha and Vinyasa traditions. Breath-led flowing sequences that build strength, flexibility and body awareness through the changing seasons.', href: '/classes/seasonal-flow-yoga', icon: '🌿' },
-  { title: 'Restorative Yoga', description: 'A deeply calming practice using props and supported postures. Designed to calm the nervous system, release tension and encourage profound rest and recovery.', href: '/classes/restorative-yoga', icon: '🕊️' },
-  { title: 'Yin Yoga', description: 'A slower, meditative practice holding postures for several minutes. Supports joint mobility, connective tissue health and deep mindful awareness.', href: '/classes/yin-yoga', icon: '🌙' },
-  { title: 'Pilates', description: 'Controlled movement focused on alignment, core strength and postural awareness. Build stability and resilience through precise, mindful practice.', href: '/classes/pilates', icon: '💪' },
-  { title: 'Breathwork', description: 'Conscious breathing techniques for relaxation, stress relief and emotional balance. Learn practical tools to support everyday wellbeing.', href: '/classes/breathwork', icon: '🌬️' },
-  { title: 'Sound Baths', description: 'Immersive relaxation experiences using singing bowls and resonant instruments. Deep rest for body and mind in a peaceful Highland setting.', href: '/classes/sound-baths', icon: '🔔' },
+  { title: 'Seasonal Flow Yoga', description: 'A dynamic practice blending Hatha and Vinyasa traditions. Breath-led flowing sequences that build strength, flexibility and body awareness through the changing seasons.', href: '/classes/seasonal-flow-yoga', icon: '🌿', imageSrc: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop', imageAlt: 'Seasonal flow yoga practice' },
+  { title: 'Restorative Yoga', description: 'A deeply calming practice using props and supported postures. Designed to calm the nervous system, release tension and encourage profound rest and recovery.', href: '/classes/restorative-yoga', icon: '🕊️', imageSrc: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop', imageAlt: 'Restorative yoga with props' },
+  { title: 'Yin Yoga', description: 'A slower, meditative practice holding postures for several minutes. Supports joint mobility, connective tissue health and deep mindful awareness.', href: '/classes/yin-yoga', icon: '🌙', imageSrc: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&h=400&fit=crop', imageAlt: 'Yin yoga practice' },
+  { title: 'Pilates', description: 'Controlled movement focused on alignment, core strength and postural awareness. Build stability and resilience through precise, mindful practice.', href: '/classes/pilates', icon: '💪', imageSrc: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop', imageAlt: 'Pilates mat class' },
+  { title: 'Breathwork', description: 'Conscious breathing techniques for relaxation, stress relief and emotional balance. Learn practical tools to support everyday wellbeing.', href: '/classes/breathwork', icon: '🌬️', imageSrc: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=600&h=400&fit=crop', imageAlt: 'Breathwork and meditation' },
+  { title: 'Sound Baths', description: 'Immersive relaxation experiences using singing bowls and resonant instruments. Deep rest for body and mind in a peaceful Highland setting.', href: '/classes/sound-baths', icon: '🔔', imageSrc: 'https://images.unsplash.com/photo-1591228127121-c36534347f84?w=600&h=400&fit=crop', imageAlt: 'Sound bath with singing bowls' },
 ];
 
 export default function ClassesPage() {
@@ -29,7 +29,8 @@ export default function ClassesPage() {
         variant="narrow"
         title="Yoga and Pilates Classes in the Scottish Highlands"
         subtitle="Mindful movement, breathwork and relaxation practices designed to support strength, flexibility and wellbeing"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&h=900&fit=crop"
+        imageAlt="Yoga class in a sunlit studio"
       />
       <Breadcrumbs items={[{ name: 'Classes', url: '/classes' }]} />
 

@@ -34,6 +34,8 @@ const retreatTypes = [
       'Step away from daily routines and immerse yourself in mindful movement and nature across stunning UK locations, with a focus on yoga retreat Scotland experiences.',
     href: '/retreats/uk-retreats',
     icon: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    imageSrc: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+    imageAlt: 'Scottish Highlands mountain landscape',
   },
   {
     title: 'International Retreats',
@@ -41,6 +43,8 @@ const retreatTypes = [
       'Combine travel with meaningful time for rest, reflection and wellbeing in inspiring international destinations.',
     href: '/retreats/international-retreats',
     icon: '🌍',
+    imageSrc: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop',
+    imageAlt: 'Beautiful beach destination for international retreat',
   },
   {
     title: 'The Retreat Experience',
@@ -48,6 +52,8 @@ const retreatTypes = [
       'Discover what to expect on a Present Heart Living retreat — from daily practices to meals, nature and rest.',
     href: '/retreats/retreat-experience',
     icon: '✨',
+    imageSrc: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&h=400&fit=crop',
+    imageAlt: 'Peaceful yoga retreat experience',
   },
 ];
 
@@ -83,7 +89,8 @@ export default function RetreatsPage() {
         variant="narrow"
         title="Yoga and Wellbeing Retreats"
         subtitle="Step away from everyday life and reconnect with yourself through yoga retreat Scotland experiences in stunning natural settings"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&h=900&fit=crop"
+        imageAlt="Scottish Highlands landscape for yoga retreats"
       />
       <Breadcrumbs items={[{ name: 'Retreats', url: '/retreats' }]} />
 

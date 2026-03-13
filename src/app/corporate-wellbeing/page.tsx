@@ -109,7 +109,8 @@ export default function CorporateWellbeingPage() {
         variant="narrow"
         title="Corporate Wellbeing Programmes"
         subtitle="Yoga, breathwork and mindfulness sessions designed to support healthier, happier workplaces across the Scottish Highlands"
-        bgGradient="from-forest/85 to-sage/55"
+        imageSrc="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop"
+        imageAlt="Modern office space for corporate wellbeing programmes"
       />
       <Breadcrumbs
         items={[{ name: 'Corporate Wellbeing', url: '/corporate-wellbeing' }]}

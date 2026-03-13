@@ -90,7 +90,8 @@ export default function UkRetreatsPage() {
         variant="narrow"
         title="UK Yoga Retreats"
         subtitle="Weekend yoga retreat Scotland experiences amid the stunning landscapes of the Scottish Highlands"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop"
+        imageAlt="Scottish Highlands mountain landscape for yoga retreats"
       />
       <Breadcrumbs
         items={[

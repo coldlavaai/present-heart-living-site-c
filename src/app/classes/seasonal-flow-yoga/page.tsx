@@ -33,7 +33,8 @@ export default function SeasonalFlowPage() {
         variant="narrow"
         title="Seasonal Flow Yoga"
         subtitle="A dynamic, breath-led practice that moves with the rhythm of the Scottish Highlands seasons"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&h=900&fit=crop"
+        imageAlt="Seasonal flow yoga practice"
       />
       <Breadcrumbs items={[{ name: 'Classes', url: '/classes' }, { name: 'Seasonal Flow Yoga', url: '/classes/seasonal-flow-yoga' }]} />
 

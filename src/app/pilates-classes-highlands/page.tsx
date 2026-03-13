@@ -72,7 +72,8 @@ export default function PilatesClassesHighlandsPage() {
         variant="narrow"
         title="Pilates Classes in the Scottish Highlands"
         subtitle="Controlled movement, alignment and core strength in a calm and supportive environment"
-        bgGradient="from-forest/80 to-sage/55"
+        imageSrc="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&h=900&fit=crop"
+        imageAlt="Pilates class in the Scottish Highlands"
       />
       <Breadcrumbs
         items={[

@@ -72,7 +72,8 @@ export default function BeginnerYogaHighlandsPage() {
         variant="narrow"
         title="Beginner Yoga Classes in the Scottish Highlands"
         subtitle="A welcoming, supportive space to begin your yoga journey — no experience needed"
-        bgGradient="from-sage/80 to-forest/60"
+        imageSrc="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1600&h=900&fit=crop"
+        imageAlt="Gentle yoga practice for beginners"
       />
       <Breadcrumbs
         items={[

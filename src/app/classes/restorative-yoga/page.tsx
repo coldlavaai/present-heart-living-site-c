@@ -33,7 +33,8 @@ export default function RestorativeYogaPage() {
         variant="narrow"
         title="Restorative Yoga"
         subtitle="Deeply calming practice designed to release tension, calm the nervous system and support profound rest"
-        bgGradient="from-forest/80 to-sage/50"
+        imageSrc="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&h=900&fit=crop"
+        imageAlt="Restorative yoga practice in natural light"
       />
       <Breadcrumbs items={[{ name: 'Classes', url: '/classes' }, { name: 'Restorative Yoga', url: '/classes/restorative-yoga' }]} />
 

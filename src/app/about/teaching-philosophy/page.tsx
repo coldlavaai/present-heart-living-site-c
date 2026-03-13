@@ -35,7 +35,8 @@ export default function PhilosophyPage() {
         variant="narrow"
         title="Teaching Philosophy and Training"
         subtitle="An approach to yoga and mindful movement grounded in awareness, compassion and continuous learning"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&h=900&fit=crop"
+        imageAlt="Mindful yoga practice in natural light"
       />
       <Breadcrumbs
         items={[

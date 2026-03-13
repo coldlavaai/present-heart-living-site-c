@@ -33,7 +33,8 @@ export default function YinYogaPage() {
         variant="narrow"
         title="Yin Yoga"
         subtitle="A slower, reflective practice supporting flexibility, joint mobility and deep mindful awareness"
-        bgGradient="from-forest/80 to-sage/50"
+        imageSrc="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1600&h=900&fit=crop"
+        imageAlt="Yin yoga practice"
       />
       <Breadcrumbs items={[{ name: 'Classes', url: '/classes' }, { name: 'Yin Yoga', url: '/classes/yin-yoga' }]} />
 

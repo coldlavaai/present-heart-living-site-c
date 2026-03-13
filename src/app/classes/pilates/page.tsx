@@ -33,7 +33,8 @@ export default function PilatesPage() {
         variant="narrow"
         title="Pilates Classes in the Scottish Highlands"
         subtitle="Controlled movement, alignment and core strength to support healthy posture and balanced movement"
-        bgGradient="from-forest/80 to-sage/50"
+        imageSrc="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&h=900&fit=crop"
+        imageAlt="Pilates mat class"
       />
       <Breadcrumbs items={[{ name: 'Classes', url: '/classes' }, { name: 'Pilates', url: '/classes/pilates' }]} />
 

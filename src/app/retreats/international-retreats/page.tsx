@@ -58,7 +58,8 @@ export default function InternationalRetreatsPage() {
         variant="narrow"
         title="International Yoga Retreats"
         subtitle="Combine mindful travel with rest, reflection and wellbeing in inspiring destinations"
-        bgGradient="from-forest/80 to-clay/50"
+        imageSrc="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=900&fit=crop"
+        imageAlt="Beautiful beach destination for international yoga retreat"
       />
       <Breadcrumbs
         items={[

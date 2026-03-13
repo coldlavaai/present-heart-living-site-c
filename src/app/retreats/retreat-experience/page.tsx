@@ -58,7 +58,8 @@ export default function RetreatExperiencePage() {
         variant="narrow"
         title="The Retreat Experience"
         subtitle="More than a series of yoga classes — a genuine opportunity to pause, restore and reconnect"
-        bgGradient="from-forest/80 to-sage/50"
+        imageSrc="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600&h=900&fit=crop"
+        imageAlt="Peaceful yoga retreat experience"
       />
       <Breadcrumbs
         items={[

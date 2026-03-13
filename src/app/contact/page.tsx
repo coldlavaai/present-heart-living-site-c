@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FadeIn from '@/components/FadeIn';
@@ -27,8 +28,17 @@ export default function ContactPage() {
     <>
       <JsonLd data={localBusinessSchema as unknown as Record<string, unknown>} />
 
-      <section className="bg-gradient-to-br from-forest/85 to-sage/60 pt-32 pb-16 md:pt-36 md:pb-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="relative overflow-hidden pt-32 pb-16 md:pt-36 md:pb-20">
+        <Image
+          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&h=900&fit=crop"
+          alt="Contact Present Heart Living"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/20" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 drop-shadow-sm">
               Contact Present Heart Living

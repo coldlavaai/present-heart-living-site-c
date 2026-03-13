@@ -73,7 +73,8 @@ export default function YogaClassesInvernessPage() {
         variant="narrow"
         title="Yoga Classes Near Inverness"
         subtitle="Welcoming yoga, Pilates and mindful movement practices in the Scottish Highlands — just a short drive from Inverness"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&h=900&fit=crop"
+        imageAlt="Yoga class near Inverness"
       />
       <Breadcrumbs
         items={[

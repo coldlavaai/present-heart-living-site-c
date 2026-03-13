@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import FadeIn from './FadeIn';
 
@@ -10,6 +11,8 @@ interface HeroProps {
   secondaryCTA?: { label: string; href: string };
   variant?: 'full' | 'narrow';
   bgGradient?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export default function Hero({
@@ -19,17 +22,32 @@ export default function Hero({
   secondaryCTA,
   variant = 'full',
   bgGradient,
+  imageSrc,
+  imageAlt,
 }: HeroProps) {
   const isNarrow = variant === 'narrow';
   const gradient = bgGradient || 'from-forest/90 via-forest/70 to-forest/50';
 
   return (
     <section
-      className={`relative bg-gradient-to-br ${gradient} flex items-center justify-center text-center ${
+      className={`relative flex items-center justify-center text-center overflow-hidden ${
         isNarrow ? 'pt-32 pb-16 md:pt-36 md:pb-20' : 'min-h-[80vh] md:min-h-[90vh]'
-      }`}
+      } ${!imageSrc ? `bg-gradient-to-br ${gradient}` : ''}`}
     >
-      <div className="max-w-4xl mx-auto px-4">
+      {imageSrc && (
+        <>
+          <Image
+            src={imageSrc}
+            alt={imageAlt || ''}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/20" />
+        </>
+      )}
+      <div className="relative z-10 max-w-4xl mx-auto px-4">
         <FadeIn>
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 drop-shadow-sm">
             {title}

@@ -33,7 +33,8 @@ export default function BreathworkPage() {
         variant="narrow"
         title="Breathwork Classes"
         subtitle="Conscious breathing techniques for relaxation, emotional balance and everyday wellbeing in the Scottish Highlands"
-        bgGradient="from-forest/80 to-sage/50"
+        imageSrc="https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=1600&h=900&fit=crop"
+        imageAlt="Breathwork and meditation practice"
       />
       <Breadcrumbs items={[{ name: 'Classes', url: '/classes' }, { name: 'Breathwork', url: '/classes/breathwork' }]} />
 

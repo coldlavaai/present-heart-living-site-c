@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Hero from '@/components/Hero';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -23,7 +24,8 @@ export default function AudreyPage() {
         variant="narrow"
         title="Meet Audrey Buchanan"
         subtitle="Founder of Present Heart Living — over 30 years of yoga practice, teaching mindful movement in the Scottish Highlands"
-        bgGradient="from-forest/85 to-sage/60"
+        imageSrc="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&h=900&fit=crop"
+        imageAlt="Audrey Buchanan yoga teacher"
       />
       <Breadcrumbs
         items={[
@@ -31,6 +33,34 @@ export default function AudreyPage() {
           { name: 'Audrey Buchanan', url: '/about/audrey-buchanan' },
         ]}
       />
+
+      {/* Portrait Image */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <FadeIn direction="left">
+              <div className="relative aspect-[3/4] max-w-sm mx-auto rounded-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop"
+                  alt="Audrey Buchanan, yoga teacher and founder of Present Heart Living"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </FadeIn>
+            <FadeIn direction="right">
+              <h2 className="font-heading text-2xl md:text-3xl text-forest mb-4">Founder &amp; Teacher</h2>
+              <p className="text-peat/70 leading-relaxed mb-4">
+                Audrey Buchanan is the founder and teacher behind Present Heart Living. With over thirty years of personal yoga practice and a deep connection to the Scottish Highlands, Audrey brings genuine warmth and expertise to every class.
+              </p>
+              <p className="text-peat/70 leading-relaxed">
+                Her journey with yoga has been one of continuous exploration — developing strength, flexibility and inner awareness while sharing these practices with students from across the Highlands.
+              </p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4">

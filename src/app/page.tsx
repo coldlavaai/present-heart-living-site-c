@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Hero from '@/components/Hero';
 import ClassCard from '@/components/ClassCard';
 import SectionHeading from '@/components/SectionHeading';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTABanner from '@/components/CTABanner';
+import SplitSection from '@/components/SplitSection';
 import FadeIn from '@/components/FadeIn';
 import JsonLd from '@/components/JsonLd';
 import { localBusinessSchema } from '@/lib/schema';
@@ -32,6 +34,8 @@ const classes = [
       'A flowing practice combining breath and movement to build strength, flexibility and body awareness through the seasons.',
     href: '/classes/seasonal-flow-yoga',
     icon: '🌿',
+    imageSrc: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop',
+    imageAlt: 'Seasonal flow yoga practice',
   },
   {
     title: 'Restorative Yoga',
@@ -39,6 +43,8 @@ const classes = [
       'A deeply relaxing practice designed to calm the nervous system and encourage profound rest and recovery.',
     href: '/classes/restorative-yoga',
     icon: '🕊️',
+    imageSrc: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop',
+    imageAlt: 'Restorative yoga practice',
   },
   {
     title: 'Yin Yoga',
@@ -46,6 +52,8 @@ const classes = [
       'A slower, reflective practice that supports joint mobility, connective tissue health and mindful awareness.',
     href: '/classes/yin-yoga',
     icon: '🌙',
+    imageSrc: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&h=400&fit=crop',
+    imageAlt: 'Yin yoga practice',
   },
   {
     title: 'Pilates',
@@ -53,6 +61,8 @@ const classes = [
       'Controlled movement, alignment and core strength to support healthy posture and balanced movement.',
     href: '/classes/pilates',
     icon: '💪',
+    imageSrc: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop',
+    imageAlt: 'Pilates mat practice',
   },
   {
     title: 'Breathwork',
@@ -102,6 +112,8 @@ export default function HomePage() {
         subtitle="Movement, breath and awareness for a balanced life. Present Heart Living offers mindful yoga, Pilates and breathwork practices near Inverness — welcoming all levels."
         primaryCTA={{ label: 'Book a Class', href: '/contact' }}
         secondaryCTA={{ label: 'Explore Classes', href: '/classes' }}
+        imageSrc="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&h=900&fit=crop"
+        imageAlt="Yoga practice in natural light in the Scottish Highlands"
       />
 
       {/* Intro */}
@@ -154,39 +166,29 @@ export default function HomePage() {
       </section>
 
       {/* Retreats */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <FadeIn direction="left">
-              <div className="bg-gradient-to-br from-forest/20 to-sage/20 rounded-2xl aspect-[4/3] flex items-center justify-center">
-                <span className="text-6xl">🏔️</span>
-              </div>
-            </FadeIn>
-            <FadeIn direction="right">
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-forest mb-4">
-                Yoga Retreats in Scotland and Beyond
-              </h2>
-              <p className="text-peat/70 leading-relaxed mb-4">
-                Retreats offer the opportunity to step away from everyday routines and reconnect with what
-                matters most. Present Heart Living yoga retreats in Scotland combine yoga, breathwork and
-                mindfulness practices with time in nature, creating space for reflection, rest and renewed
-                energy amid the stunning Scottish Highlands landscape.
-              </p>
-              <p className="text-peat/70 leading-relaxed mb-6">
-                Whether you choose a weekend retreat in the Highlands or an international wellness
-                experience, each retreat is designed to support deep rest, personal reflection and meaningful
-                connection with yourself and nature.
-              </p>
-              <Link
-                href="/retreats"
-                className="inline-flex items-center gap-2 bg-sage text-white px-6 py-3 rounded-lg font-medium hover:bg-forest transition-colors"
-              >
-                Explore Retreats
-              </Link>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+      <SplitSection
+        title="Yoga Retreats in Scotland and Beyond"
+        imageSrc="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop"
+        imageAlt="Scottish Highlands landscape for retreat setting"
+      >
+        <p>
+          Retreats offer the opportunity to step away from everyday routines and reconnect with what
+          matters most. Present Heart Living yoga retreats in Scotland combine yoga, breathwork and
+          mindfulness practices with time in nature, creating space for reflection, rest and renewed
+          energy amid the stunning Scottish Highlands landscape.
+        </p>
+        <p>
+          Whether you choose a weekend retreat in the Highlands or an international wellness
+          experience, each retreat is designed to support deep rest, personal reflection and meaningful
+          connection with yourself and nature.
+        </p>
+        <Link
+          href="/retreats"
+          className="inline-flex items-center gap-2 bg-sage text-white px-6 py-3 rounded-lg font-medium hover:bg-forest transition-colors mt-2"
+        >
+          Explore Retreats
+        </Link>
+      </SplitSection>
 
       {/* Testimonials */}
       <section className="py-16 md:py-24 bg-mist/30">
@@ -204,39 +206,30 @@ export default function HomePage() {
       </section>
 
       {/* Meet Audrey */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <FadeIn direction="right" className="order-2 lg:order-1">
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-forest mb-4">
-                Meet Audrey Buchanan
-              </h2>
-              <p className="text-peat/70 leading-relaxed mb-4">
-                Present Heart Living was founded by Audrey Buchanan, an experienced teacher with more than
-                thirty years of personal yoga practice based in the Scottish Highlands. With a 500-hour Yoga
-                Alliance qualification, breathwork certification and trauma-informed training, Audrey brings
-                genuine depth to every class.
-              </p>
-              <p className="text-peat/70 leading-relaxed mb-6">
-                Her background in education — as both a primary teacher and head teacher — shapes her
-                clear, supportive teaching style. Audrey encourages students to move with awareness and
-                develop practices that support wellbeing beyond the mat.
-              </p>
-              <Link
-                href="/about/audrey-buchanan"
-                className="inline-flex items-center gap-2 text-sage font-medium hover:text-forest transition-colors"
-              >
-                Learn more about Audrey →
-              </Link>
-            </FadeIn>
-            <FadeIn direction="left" className="order-1 lg:order-2">
-              <div className="bg-gradient-to-br from-sage/20 to-clay/20 rounded-2xl aspect-[3/4] max-w-sm mx-auto flex items-center justify-center">
-                <span className="text-6xl">🧘‍♀️</span>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+      <SplitSection
+        title="Meet Audrey Buchanan"
+        imageSrc="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop"
+        imageAlt="Audrey Buchanan, founder of Present Heart Living"
+        reverse
+      >
+        <p>
+          Present Heart Living was founded by Audrey Buchanan, an experienced teacher with more than
+          thirty years of personal yoga practice based in the Scottish Highlands. With a 500-hour Yoga
+          Alliance qualification, breathwork certification and trauma-informed training, Audrey brings
+          genuine depth to every class.
+        </p>
+        <p>
+          Her background in education — as both a primary teacher and head teacher — shapes her
+          clear, supportive teaching style. Audrey encourages students to move with awareness and
+          develop practices that support wellbeing beyond the mat.
+        </p>
+        <Link
+          href="/about/audrey-buchanan"
+          className="inline-flex items-center gap-2 text-sage font-medium hover:text-forest transition-colors mt-2"
+        >
+          Learn more about Audrey →
+        </Link>
+      </SplitSection>
 
       {/* Class Schedule Teaser */}
       <section className="py-16 md:py-20 bg-sand/10">

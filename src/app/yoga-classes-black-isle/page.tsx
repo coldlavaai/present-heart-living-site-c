@@ -68,7 +68,8 @@ export default function YogaClassesBlackIslePage() {
         variant="narrow"
         title="Yoga Classes on the Black Isle"
         subtitle="Mindful yoga, Pilates and breathwork for communities across the Black Isle and Scottish Highlands"
-        bgGradient="from-forest/80 to-sage/50"
+        imageSrc="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&h=900&fit=crop"
+        imageAlt="Scottish Highlands landscape near the Black Isle"
       />
       <Breadcrumbs
         items={[
