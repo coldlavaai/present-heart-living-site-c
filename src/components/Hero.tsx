@@ -40,11 +40,11 @@ export default function Hero({
             src={imageSrc}
             alt={imageAlt || ''}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-[8000ms] scale-[1.03]"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-white/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-linen/40 via-linen/65 to-linen/90" />
         </>
       )}
       <div className="relative z-10 max-w-4xl mx-auto px-4">
@@ -66,7 +66,7 @@ export default function Hero({
               {primaryCTA && (
                 <Link
                   href={primaryCTA.href}
-                  className="inline-flex items-center justify-center bg-sage text-white px-8 py-3.5 rounded-lg font-medium hover:bg-forest transition-colors"
+                  className="inline-flex items-center justify-center bg-sage text-white px-8 py-3.5 rounded-lg font-medium text-sm tracking-wider hover:bg-forest hover:shadow-lg transition-all duration-300"
                   style={{ color: '#FFFFFF' }}
                 >
                   {primaryCTA.label}
@@ -75,7 +75,7 @@ export default function Hero({
               {secondaryCTA && (
                 <Link
                   href={secondaryCTA.href}
-                  className="inline-flex items-center justify-center border border-forest/40 text-forest px-8 py-3.5 rounded-lg font-medium hover:bg-forest/10 transition-colors"
+                  className="inline-flex items-center justify-center border border-forest/40 text-forest px-8 py-3.5 rounded-lg font-medium text-sm tracking-wider hover:bg-forest/10 transition-all duration-300"
                   style={{ color: '#3D4F3D' }}
                 >
                   {secondaryCTA.label}

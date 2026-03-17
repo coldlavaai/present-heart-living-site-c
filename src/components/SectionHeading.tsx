@@ -17,9 +17,10 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <FadeIn className={`${centered ? 'text-center' : ''} ${className}`}>
-      <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-forest mb-3">
+      <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-forest mb-4">
         {title}
       </h2>
+      <div className={`w-12 h-px bg-gold/60 mb-5 ${centered ? 'mx-auto' : ''}`} />
       {subtitle && (
         <p className="text-lg text-peat/60 max-w-2xl mx-auto">
           {subtitle}

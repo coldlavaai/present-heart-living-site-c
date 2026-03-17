@@ -53,42 +53,100 @@ const faqs = [
   },
 ];
 
+const SessionIcon = ({ type }: { type: string }) => {
+  const cls = 'w-8 h-8 text-sage';
+  switch (type) {
+    case 'desk':
+      return (
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="4.5" r="2" />
+          <path d="M12 6.5v5" />
+          <path d="M9 9.5H7M17 9.5h-5" />
+          <path d="M10 11.5l2 2.5 2-2.5" />
+          <path d="M8 20h8M12 14v6" />
+        </svg>
+      );
+    case 'breath':
+      return (
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round">
+          <path d="M3 7c2.5-3 5 3 7.5 0s5-3 7.5 0" />
+          <path d="M3 12c2.5-3 5 3 7.5 0s5-3 7.5 0" />
+          <path d="M3 17c2.5-3 5 3 7.5 0s5-3 7.5 0" />
+        </svg>
+      );
+    case 'mind':
+      return (
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
+        </svg>
+      );
+    case 'group':
+      return (
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="8" cy="5" r="2" />
+          <circle cx="16" cy="5" r="2" />
+          <path d="M5 21l3-7 3 3 3-3 3 7" />
+          <path d="M8 14v-3M16 14v-3" />
+        </svg>
+      );
+    case 'sound':
+      return (
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round">
+          <path d="M12 22c4 0 7-3 7-7s-3-7-7-7-7 3-7 7 3 7 7 7z" />
+          <path d="M5 15H2M22 15h-3" />
+          <path d="M7.05 7.05L5 5M19 5l-2.05 2.05" />
+          <circle cx="12" cy="15" r="2" />
+        </svg>
+      );
+    case 'program':
+      return (
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
 const sessionTypes = [
   {
     title: 'Desk-Friendly Yoga',
     description:
       'Gentle stretches and movements that can be practised at or near a desk, designed to relieve physical tension from prolonged sitting.',
-    icon: '💻',
+    iconType: 'desk',
   },
   {
     title: 'Breathwork Sessions',
     description:
       'Conscious breathing techniques to help employees manage stress, improve focus and find calm during busy working days.',
-    icon: '🌬️',
+    iconType: 'breath',
   },
   {
     title: 'Mindfulness Workshops',
     description:
       'Practical mindfulness exercises that teams can use daily to support awareness, concentration and emotional resilience.',
-    icon: '🧘',
+    iconType: 'mind',
   },
   {
     title: 'Group Yoga Classes',
     description:
       'Accessible yoga sessions for teams of all experience levels, building connection and supporting physical wellbeing.',
-    icon: '🌿',
+    iconType: 'group',
   },
   {
     title: 'Sound Bath Experiences',
     description:
       'Immersive sound-based relaxation sessions that help teams release accumulated tension and restore calm.',
-    icon: '🔔',
+    iconType: 'sound',
   },
   {
     title: 'Wellbeing Programmes',
     description:
       'Ongoing programmes designed to embed wellbeing practices into workplace culture over weeks or months.',
-    icon: '📋',
+    iconType: 'program',
   },
 ];
 
@@ -165,7 +223,7 @@ export default function CorporateWellbeingPage() {
                 { title: 'Positive Culture', desc: 'Embedding wellbeing practices signals that an organisation values its people and their health.' },
               ].map((b, i) => (
                 <FadeIn key={b.title} delay={0.1 + i * 0.05}>
-                  <div className="bg-white rounded-xl p-6 border border-mist/50">
+                  <div className="bg-white rounded-xl p-6 border-l-2 border-l-gold/50 border border-mist/30 shadow-sm hover:shadow-md transition-shadow duration-300">
                     <h3 className="font-heading text-lg text-forest mb-2">{b.title}</h3>
                     <p className="text-sm text-peat/70 leading-relaxed">{b.desc}</p>
                   </div>
@@ -186,8 +244,10 @@ export default function CorporateWellbeingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {sessionTypes.map((s, i) => (
               <FadeIn key={s.title} delay={i * 0.08}>
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-mist/50 h-full">
-                  <div className="text-3xl mb-3">{s.icon}</div>
+                <div className="bg-white rounded-xl p-7 shadow-md border border-mist/30 h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                  <div className="mb-5 p-3 bg-sage/8 rounded-lg w-fit">
+                    <SessionIcon type={s.iconType} />
+                  </div>
                   <h3 className="font-heading text-lg text-forest mb-2">{s.title}</h3>
                   <p className="text-sm text-peat/60 leading-relaxed">{s.description}</p>
                 </div>
@@ -212,9 +272,9 @@ export default function CorporateWellbeingPage() {
                 { step: '03', title: 'Delivery', desc: 'Sessions are delivered at your workplace, our studio or an external venue at times that suit your team.' },
                 { step: '04', title: 'Ongoing Support', desc: 'For organisations seeking ongoing wellbeing support, regular programmes can be arranged on a weekly, fortnightly or monthly basis.' },
               ].map((item) => (
-                <div key={item.step} className="flex gap-4">
-                  <div className="text-sage font-heading text-2xl font-semibold">{item.step}</div>
-                  <div>
+                <div key={item.step} className="flex gap-6 items-start">
+                  <div className="font-heading text-6xl font-light text-sage/15 leading-none select-none shrink-0 w-16 text-right">{item.step}</div>
+                  <div className="pt-2">
                     <h3 className="font-heading text-lg text-forest mb-1">{item.title}</h3>
                     <p className="text-peat/70 leading-relaxed">{item.desc}</p>
                   </div>

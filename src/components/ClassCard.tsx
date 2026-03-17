@@ -19,7 +19,7 @@ export default function ClassCard({ title, description, href, icon, imageSrc, im
     <FadeIn delay={delay}>
       <Link
         href={href}
-        className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-mist/50 hover:border-sage/30 h-full"
+        className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 border border-mist/50 hover:border-sage/30 h-full hover:-translate-y-1"
       >
         {imageSrc ? (
           <div className="relative aspect-[3/2]">

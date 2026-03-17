@@ -47,10 +47,10 @@ export default function CTABanner({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href={primaryCTA.href}
-            className={`inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-medium text-base transition-colors ${
+            className={`inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-medium text-sm tracking-wider transition-all duration-300 ${
               isLight
-                ? 'bg-sage text-white hover:bg-forest'
-                : 'bg-white text-forest hover:bg-linen'
+                ? 'bg-sage text-white hover:bg-forest hover:shadow-lg'
+                : 'bg-white text-forest hover:bg-linen hover:shadow-lg'
             }`}
           >
             {primaryCTA.label}
@@ -58,7 +58,7 @@ export default function CTABanner({
           {secondaryCTA && (
             <Link
               href={secondaryCTA.href}
-              className={`inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-medium text-base border transition-colors ${
+              className={`inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-medium text-sm tracking-wider border transition-all duration-300 ${
                 isLight
                   ? 'border-sage text-sage hover:bg-sage hover:text-white'
                   : 'border-white/30 text-white hover:bg-white/10'

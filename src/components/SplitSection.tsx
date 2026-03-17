@@ -25,7 +25,7 @@ export default function SplitSection({
       <div className="max-w-6xl mx-auto px-4">
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center`}>
           <FadeIn direction={reverse ? 'right' : 'left'} className={reverse ? 'lg:order-2' : ''}>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
               <Image
                 src={imageSrc}
                 alt={imageAlt}

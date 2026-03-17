@@ -114,7 +114,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden sm:inline-flex bg-sage text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-forest transition-colors"
+            className="hidden sm:inline-flex bg-sage text-white px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-forest hover:shadow-md transition-all duration-300"
             style={{ color: '#FFFFFF' }}
           >
             Book a Class
