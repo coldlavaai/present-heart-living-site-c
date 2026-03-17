@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import type React from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FadeIn from '@/components/FadeIn';
 import SectionHeading from '@/components/SectionHeading';
 import CTABanner from '@/components/CTABanner';
+import { journalPosts, topicLinks } from '@/lib/journal';
 
 export const metadata: Metadata = {
   title: 'Wellbeing Journal | Yoga, Breathwork & Mindfulness Insights',
@@ -22,60 +22,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-const articleIcons: Record<string, React.ReactNode> = {
-  'Yoga & Wellbeing': (
-    <svg className="w-12 h-12 text-sage/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22V12" />
-      <path d="M12 12C12 12 7 10 5 6c4 0 7 2 7 6z" />
-      <path d="M12 12C12 12 17 10 19 6c-4 0-7 2-7 6z" />
-      <path d="M12 17c-2-1-4-3-4-5" />
-    </svg>
-  ),
-  Breathwork: (
-    <svg className="w-12 h-12 text-sage/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
-      <path d="M3 8c2.5-3 5 3 7.5 0s5-3 7.5 0" />
-      <path d="M3 13c2.5-3 5 3 7.5 0s5-3 7.5 0" />
-      <path d="M3 18c2.5-3 5 3 7.5 0s5-3 7.5 0" />
-    </svg>
-  ),
-  Retreats: (
-    <svg className="w-12 h-12 text-sage/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 18l4-8 4 4 3-6 4 10" />
-      <path d="M3 18h18" />
-    </svg>
-  ),
-};
-
-const articles = [
-  {
-    title: 'Five Benefits of a Regular Yoga Practice',
-    excerpt:
-      'Yoga offers far more than improved flexibility. Discover five meaningful ways that regular practice can support your physical wellbeing, mental clarity and overall quality of life.',
-    category: 'Yoga & Wellbeing',
-    date: '15 January 2025',
-    readTime: '5 min read',
-    slug: '#',
-  },
-  {
-    title: 'A Beginner\'s Guide to Breathwork',
-    excerpt:
-      'Breathwork can seem mysterious, but at its core it is simply about developing a conscious relationship with your breathing. Learn how to get started with practical techniques you can try today.',
-    category: 'Breathwork',
-    date: '28 February 2025',
-    readTime: '6 min read',
-    slug: '#',
-  },
-  {
-    title: 'Preparing for Your First Yoga Retreat in Scotland',
-    excerpt:
-      'Thinking about attending a yoga retreat in Scotland? Here\'s everything you need to know — from what to pack to how to prepare mentally for an experience that could be truly transformative.',
-    category: 'Retreats',
-    date: '12 March 2025',
-    readTime: '7 min read',
-    slug: '#',
-  },
-];
 
 export default function JournalPage() {
   return (
@@ -126,12 +72,20 @@ export default function JournalPage() {
             subtitle="Insights from the Present Heart Living community"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-            {articles.map((article, i) => (
-              <FadeIn key={article.title} delay={i * 0.1}>
-                <article className="group bg-white rounded-xl shadow-sm border border-mist/50 overflow-hidden hover:shadow-md hover:border-sage/30 transition-all h-full flex flex-col">
-                  {/* Image Placeholder */}
-                  <div className="aspect-[16/10] bg-gradient-to-br from-sage/10 to-forest/10 flex items-center justify-center">
-                    {articleIcons[article.category]}
+            {journalPosts.map((article, i) => (
+              <FadeIn key={article.slug} delay={i * 0.1}>
+                <Link
+                  href={`/journal/${article.slug}`}
+                  className="group flex flex-col bg-white rounded-xl shadow-md border border-mist/30 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full"
+                >
+                  <div className="relative aspect-[16/10]">
+                    <Image
+                      src={article.cardImageSrc}
+                      alt={article.imageAlt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-3 text-xs text-peat/50 mb-3">
@@ -141,7 +95,7 @@ export default function JournalPage() {
                       <span>{article.readTime}</span>
                     </div>
                     <h3 className="font-heading text-lg text-forest group-hover:text-sage transition-colors mb-3">
-                      <Link href={article.slug}>{article.title}</Link>
+                      {article.title}
                     </h3>
                     <p className="text-sm text-peat/60 leading-relaxed flex-1">{article.excerpt}</p>
                     <div className="mt-4 pt-4 border-t border-mist/30 flex items-center justify-between">
@@ -151,7 +105,7 @@ export default function JournalPage() {
                       </span>
                     </div>
                   </div>
-                </article>
+                </Link>
               </FadeIn>
             ))}
           </div>
@@ -167,22 +121,14 @@ export default function JournalPage() {
           />
           <FadeIn delay={0.2}>
             <div className="flex flex-wrap justify-center gap-3 mt-8">
-              {[
-                'Yoga Practice',
-                'Breathwork',
-                'Mindfulness',
-                'Retreats',
-                'Beginner Guides',
-                'Seasonal Living',
-                'Wellbeing',
-                'Pilates',
-              ].map((topic) => (
-                <span
+              {Object.entries(topicLinks).map(([topic, href]) => (
+                <Link
                   key={topic}
-                  className="px-4 py-2 bg-white rounded-full text-sm text-peat/70 border border-mist/50 hover:border-sage/30 hover:text-sage transition-colors cursor-pointer"
+                  href={href}
+                  className="px-4 py-2 bg-white rounded-full text-sm text-peat/70 border border-mist/50 hover:border-sage/30 hover:text-sage hover:bg-sage/5 transition-all duration-300 cursor-pointer"
                 >
                   {topic}
-                </span>
+                </Link>
               ))}
             </div>
           </FadeIn>
