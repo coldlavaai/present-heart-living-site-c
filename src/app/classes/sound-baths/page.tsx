@@ -34,7 +34,7 @@ export default function SoundBathsPage() {
         variant="narrow"
         title="Sound Bath Sessions"
         subtitle="Immersive relaxation using singing bowls and resonant instruments — deep rest for body and mind"
-        imageSrc="https://images.unsplash.com/photo-1591228127121-c36534347f84?w=1600&h=900&fit=crop"
+        imageSrc="/images/sound-bath.jpg"
         imageAlt="Sound bath with singing bowls"
       />
       <Breadcrumbs items={[{ name: 'Classes', url: '/classes' }, { name: 'Sound Baths', url: '/classes/sound-baths' }]} />
