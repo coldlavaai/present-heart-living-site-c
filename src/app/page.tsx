@@ -43,7 +43,7 @@ const classes = [
       'A deeply relaxing practice designed to calm the nervous system and encourage profound rest and recovery.',
     href: '/classes/restorative-yoga',
     icon: '🕊️',
-    imageSrc: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop',
+    imageSrc: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=600&h=400&fit=crop',
     imageAlt: 'Restorative yoga practice',
   },
   {
@@ -79,7 +79,7 @@ const classes = [
       'Immersive relaxation using singing bowls and resonant instruments to encourage deep calm.',
     href: '/classes/sound-baths',
     icon: '🔔',
-    imageSrc: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&h=400&fit=crop&q=80',
+    imageSrc: 'https://images.unsplash.com/photo-1591291621164-2c6367723315?w=600&h=400&fit=crop&q=80',
     imageAlt: 'Sound bath with singing bowls',
   },
 ];
