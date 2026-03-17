@@ -62,16 +62,16 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-linen/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
+        scrolled ? 'bg-linen/95 backdrop-blur-md shadow-sm py-2' : 'bg-gradient-to-b from-black/40 to-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-forest hover:text-sage transition-colors">
-          <span className="font-heading text-xl md:text-2xl font-medium tracking-wide">
+        <Link href="/" className="transition-colors" style={{ color: scrolled ? '#2d3b2d' : '#FFFFFF' }}>
+          <span className="font-heading text-xl md:text-2xl font-medium tracking-wide" style={{ color: 'inherit' }}>
             Present Heart Living
           </span>
-          <span className="hidden md:block text-xs text-peat/50 tracking-widest mt-0.5">
+          <span className="hidden md:block text-xs tracking-widest mt-0.5" style={{ color: scrolled ? 'rgba(45,59,45,0.5)' : 'rgba(255,255,255,0.8)' }}>
             Yoga · Pilates · Breathwork · Retreats
           </span>
         </Link>
@@ -87,7 +87,7 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="text-sm font-medium text-peat hover:text-sage transition-colors py-2"
+                className="text-sm font-medium hover:text-sage transition-colors py-2" style={{ color: scrolled ? "#4a5568" : "#FFFFFF" }}
               >
                 {item.label}
               </Link>
@@ -121,7 +121,7 @@ export default function Header() {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-forest"
+            className="lg:hidden p-2" style={{ color: scrolled ? "#2d3b2d" : "#FFFFFF" }}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
