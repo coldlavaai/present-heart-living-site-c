@@ -44,7 +44,7 @@ export default function Hero({
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-linen/40 via-linen/65 to-linen/90" />
+          <div className="absolute inset-0 bg-white/72" />
         </>
       )}
       <div className="relative z-10 max-w-4xl mx-auto px-4">
