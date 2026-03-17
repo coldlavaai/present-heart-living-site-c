@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/retreats/retreat-experience`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
 
     // Local SEO pages
+    { url: `${BASE_URL}/locations`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/yoga-classes-inverness`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/yoga-classes-black-isle`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/pilates-classes-highlands`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },

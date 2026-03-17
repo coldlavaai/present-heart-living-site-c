@@ -40,12 +40,12 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/20" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 drop-shadow-sm">
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 drop-shadow-sm" style={{ color: '#FFFFFF' }}>
               Contact Present Heart Living
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
               Get in touch to book a class, ask a question or learn more about yoga and Pilates in the
               Scottish Highlands
             </p>
@@ -136,6 +136,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     className="w-full bg-sage text-white px-8 py-3.5 rounded-lg font-medium hover:bg-forest transition-colors text-base"
+                    style={{ color: '#FFFFFF' }}
                   >
                     Send Message
                   </button>

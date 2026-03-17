@@ -16,10 +16,10 @@ const footerLinks = {
     { label: 'Retreat Experience', href: '/retreats/retreat-experience' },
   ],
   'Local Classes': [
-    { label: 'Yoga Classes Inverness', href: '/locations/yoga-classes-inverness' },
-    { label: 'Yoga Classes Black Isle', href: '/locations/yoga-classes-black-isle' },
-    { label: 'Pilates Highlands', href: '/locations/pilates-classes-highlands' },
-    { label: 'Beginner Yoga', href: '/locations/beginner-yoga-classes' },
+    { label: 'Yoga Classes Inverness', href: '/yoga-classes-inverness' },
+    { label: 'Yoga Classes Black Isle', href: '/yoga-classes-black-isle' },
+    { label: 'Pilates Highlands', href: '/pilates-classes-highlands' },
+    { label: 'Beginner Yoga', href: '/beginner-yoga-classes-highlands' },
   ],
   Company: [
     { label: 'About', href: '/about' },
@@ -37,10 +37,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand + NAP */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-white font-heading text-xl font-medium">
+            <Link href="/" className="text-white font-heading text-xl font-medium" style={{ color: '#FFFFFF' }}>
               Present Heart Living
             </Link>
-            <address className="not-italic mt-4 text-sm leading-relaxed text-white/60">
+            <address className="not-italic mt-4 text-sm leading-relaxed text-white/60" style={{ color: 'rgba(255,255,255,0.6)' }}>
               9 Breac An Ord<br />
               Maryburgh<br />
               Ross-shire<br />
@@ -49,12 +49,12 @@ export default function Footer() {
             </address>
             <div className="mt-4 space-y-1 text-sm">
               <p>
-                <a href="tel:07805899207" className="text-white/60 hover:text-gold transition-colors">
+                <a href="tel:07805899207" className="text-white/60 hover:text-gold transition-colors" style={{ color: 'rgba(255,255,255,0.6)' }}>
                   07805 899207
                 </a>
               </p>
               <p>
-                <a href="mailto:presentheartyoga@gmail.com" className="text-white/60 hover:text-gold transition-colors">
+                <a href="mailto:presentheartyoga@gmail.com" className="text-white/60 hover:text-gold transition-colors" style={{ color: 'rgba(255,255,255,0.6)' }}>
                   presentheartyoga@gmail.com
                 </a>
               </p>
@@ -64,13 +64,14 @@ export default function Footer() {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="text-white font-heading text-lg mb-4">{title}</h3>
+              <h3 className="text-white font-heading text-lg mb-4" style={{ color: '#FFFFFF' }}>{title}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       className="text-sm text-white/60 hover:text-gold transition-colors"
+                      style={{ color: 'rgba(255,255,255,0.6)' }}
                     >
                       {link.label}
                     </Link>
@@ -83,14 +84,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/40">
+          <p className="text-sm text-white/40" style={{ color: 'rgba(255,255,255,0.4)' }}>
             © {new Date().getFullYear()} Present Heart Living. All rights reserved.
           </p>
           <nav className="flex gap-6 text-sm text-white/40">
-            <Link href="/privacy-policy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
-            <Link href="/terms-and-conditions" className="hover:text-white/70 transition-colors">Terms</Link>
-            <Link href="/cookie-policy" className="hover:text-white/70 transition-colors">Cookies</Link>
-            <Link href="/accessibility" className="hover:text-white/70 transition-colors">Accessibility</Link>
+            <Link href="/privacy-policy" className="hover:text-white/70 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }}>Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-white/70 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }}>Terms</Link>
+            <Link href="/cookie-policy" className="hover:text-white/70 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }}>Cookies</Link>
+            <Link href="/accessibility" className="hover:text-white/70 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }}>Accessibility</Link>
           </nav>
         </div>
       </div>

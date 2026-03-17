@@ -32,11 +32,15 @@ export default function CTABanner({
           className={`font-heading text-2xl md:text-3xl lg:text-4xl mb-4 ${
             isLight ? 'text-forest' : 'text-white'
           }`}
+          style={isLight ? undefined : { color: '#FFFFFF' }}
         >
           {heading}
         </h2>
         {description && (
-          <p className={`text-lg mb-8 ${isLight ? 'text-peat/70' : 'text-white/70'}`}>
+          <p
+            className={`text-lg mb-8 ${isLight ? 'text-peat/70' : 'text-white/70'}`}
+            style={isLight ? undefined : { color: 'rgba(255,255,255,0.8)' }}
+          >
             {description}
           </p>
         )}
@@ -59,6 +63,7 @@ export default function CTABanner({
                   ? 'border-sage text-sage hover:bg-sage hover:text-white'
                   : 'border-white/30 text-white hover:bg-white/10'
               }`}
+              style={isLight ? undefined : { color: '#FFFFFF' }}
             >
               {secondaryCTA.label}
             </Link>

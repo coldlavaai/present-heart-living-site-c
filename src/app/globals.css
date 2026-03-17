@@ -27,9 +27,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1:not([class*="text-"]):not([style*="color"]),
+h2:not([class*="text-"]):not([style*="color"]),
+h3:not([class*="text-"]):not([style*="color"]),
+h4:not([class*="text-"]):not([style*="color"]),
+h5:not([class*="text-"]):not([style*="color"]),
+h6:not([class*="text-"]):not([style*="color"]) {
   font-family: var(--font-heading);
   color: var(--color-forest);
+  letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   letter-spacing: 0.02em;
 }
 
@@ -53,12 +63,12 @@ p {
   font-weight: 300;
 }
 
-a {
+a:not([class*="text-"]):not([style*="color"]) {
   color: var(--color-sage);
   transition: color 0.2s ease;
 }
 
-a:hover {
+a:not([class*="text-"]):not([style*="color"]):hover {
   color: var(--color-forest);
 }
 

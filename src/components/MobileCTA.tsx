@@ -19,6 +19,7 @@ export default function MobileCTA() {
       <Link
         href="/contact"
         className="block bg-sage text-white text-center py-3.5 rounded-lg font-medium hover:bg-sage/90 transition-colors"
+        style={{ color: '#FFFFFF' }}
       >
         Book a Class
       </Link>

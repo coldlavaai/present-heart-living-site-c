@@ -70,6 +70,8 @@ const classes = [
       'Conscious breathing techniques for relaxation, emotional balance and stress relief.',
     href: '/classes/breathwork',
     icon: '🌬️',
+    imageSrc: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop&q=80',
+    imageAlt: 'Breathwork practice in calm setting',
   },
   {
     title: 'Sound Baths',
@@ -77,6 +79,8 @@ const classes = [
       'Immersive relaxation using singing bowls and resonant instruments to encourage deep calm.',
     href: '/classes/sound-baths',
     icon: '🔔',
+    imageSrc: 'https://images.unsplash.com/photo-1591228127121-a8e0740d0e2a?w=600&h=400&fit=crop&q=80',
+    imageAlt: 'Sound bath with singing bowls',
   },
 ];
 
@@ -240,7 +244,7 @@ export default function HomePage() {
           />
           <FadeIn delay={0.2}>
             <div className="mt-10 bg-white rounded-xl border border-mist/50 overflow-hidden">
-              <div className="grid grid-cols-3 md:grid-cols-5 bg-forest text-white text-sm font-medium">
+              <div className="grid grid-cols-3 md:grid-cols-5 bg-forest text-white text-sm font-medium" style={{ color: '#FFFFFF' }}>
                 <div className="p-3">Day</div>
                 <div className="p-3">Class</div>
                 <div className="p-3 hidden md:block">Time</div>

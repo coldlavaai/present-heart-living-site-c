@@ -37,10 +37,10 @@ const navItems = [
     label: 'Local Classes',
     href: '/locations',
     children: [
-      { label: 'Yoga Classes Inverness', href: '/locations/yoga-classes-inverness' },
-      { label: 'Yoga Classes Black Isle', href: '/locations/yoga-classes-black-isle' },
-      { label: 'Pilates Highlands', href: '/locations/pilates-classes-highlands' },
-      { label: 'Beginner Yoga', href: '/locations/beginner-yoga-classes' },
+      { label: 'Yoga Classes Inverness', href: '/yoga-classes-inverness' },
+      { label: 'Yoga Classes Black Isle', href: '/yoga-classes-black-isle' },
+      { label: 'Pilates Highlands', href: '/pilates-classes-highlands' },
+      { label: 'Beginner Yoga', href: '/beginner-yoga-classes-highlands' },
     ],
   },
   { label: 'Corporate', href: '/corporate-wellbeing' },
@@ -70,6 +70,9 @@ export default function Header() {
         <Link href="/" className="text-forest hover:text-sage transition-colors">
           <span className="font-heading text-xl md:text-2xl font-medium tracking-wide">
             Present Heart Living
+          </span>
+          <span className="hidden md:block text-xs text-peat/50 tracking-widest mt-0.5">
+            Yoga · Pilates · Breathwork · Retreats
           </span>
         </Link>
 
@@ -112,6 +115,7 @@ export default function Header() {
           <Link
             href="/contact"
             className="hidden sm:inline-flex bg-sage text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-forest transition-colors"
+            style={{ color: '#FFFFFF' }}
           >
             Book a Class
           </Link>
@@ -170,6 +174,7 @@ export default function Header() {
               href="/contact"
               onClick={() => setMobileOpen(false)}
               className="block bg-sage text-white px-5 py-3 rounded-lg text-center font-medium hover:bg-forest transition-colors mt-4"
+              style={{ color: '#FFFFFF' }}
             >
               Book a Class
             </Link>
