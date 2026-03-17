@@ -213,7 +213,10 @@ export default function ContactPage() {
                   <div className="aspect-[4/3] bg-gradient-to-br from-mist/40 to-sand/40 rounded-xl border border-mist/50 flex items-center justify-center">
                     {/* Replace with Google Maps embed */}
                     <div className="text-center px-4">
-                      <span className="text-4xl block mb-3">🗺️</span>
+                      <svg className="w-10 h-10 text-sage/40 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
                       <p className="text-sm text-peat/50">
                         Google Maps embed placeholder<br />
                         <span className="text-xs">9 Breac An Ord, Maryburgh, IV7 8DH</span>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type React from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FadeIn from '@/components/FadeIn';
 import SectionHeading from '@/components/SectionHeading';
@@ -22,6 +23,30 @@ export const metadata: Metadata = {
   },
 };
 
+const articleIcons: Record<string, React.ReactNode> = {
+  'Yoga & Wellbeing': (
+    <svg className="w-12 h-12 text-sage/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12" />
+      <path d="M12 12C12 12 7 10 5 6c4 0 7 2 7 6z" />
+      <path d="M12 12C12 12 17 10 19 6c-4 0-7 2-7 6z" />
+      <path d="M12 17c-2-1-4-3-4-5" />
+    </svg>
+  ),
+  Breathwork: (
+    <svg className="w-12 h-12 text-sage/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
+      <path d="M3 8c2.5-3 5 3 7.5 0s5-3 7.5 0" />
+      <path d="M3 13c2.5-3 5 3 7.5 0s5-3 7.5 0" />
+      <path d="M3 18c2.5-3 5 3 7.5 0s5-3 7.5 0" />
+    </svg>
+  ),
+  Retreats: (
+    <svg className="w-12 h-12 text-sage/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 18l4-8 4 4 3-6 4 10" />
+      <path d="M3 18h18" />
+    </svg>
+  ),
+};
+
 const articles = [
   {
     title: 'Five Benefits of a Regular Yoga Practice',
@@ -30,7 +55,6 @@ const articles = [
     category: 'Yoga & Wellbeing',
     date: '15 January 2025',
     readTime: '5 min read',
-    icon: '🌿',
     slug: '#',
   },
   {
@@ -40,7 +64,6 @@ const articles = [
     category: 'Breathwork',
     date: '28 February 2025',
     readTime: '6 min read',
-    icon: '🌬️',
     slug: '#',
   },
   {
@@ -50,7 +73,6 @@ const articles = [
     category: 'Retreats',
     date: '12 March 2025',
     readTime: '7 min read',
-    icon: '🏔️',
     slug: '#',
   },
 ];
@@ -67,15 +89,15 @@ export default function JournalPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/20" />
+        <div className="absolute inset-0 bg-white/72" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-4 drop-shadow-sm">
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-forest mb-4 drop-shadow-sm">
               The Present Heart Journal
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style={{ color: '#5a6b58' }}>
               Thoughtful articles on yoga, breathwork, mindfulness and wellbeing from the Scottish Highlands
             </p>
           </FadeIn>
@@ -108,8 +130,8 @@ export default function JournalPage() {
               <FadeIn key={article.title} delay={i * 0.1}>
                 <article className="group bg-white rounded-xl shadow-sm border border-mist/50 overflow-hidden hover:shadow-md hover:border-sage/30 transition-all h-full flex flex-col">
                   {/* Image Placeholder */}
-                  <div className="aspect-[16/10] bg-gradient-to-br from-sage/20 to-forest/20 flex items-center justify-center">
-                    <span className="text-5xl">{article.icon}</span>
+                  <div className="aspect-[16/10] bg-gradient-to-br from-sage/10 to-forest/10 flex items-center justify-center">
+                    {articleIcons[article.category]}
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-3 text-xs text-peat/50 mb-3">

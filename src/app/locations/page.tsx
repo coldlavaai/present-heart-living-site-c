@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FadeIn from '@/components/FadeIn';
 import SectionHeading from '@/components/SectionHeading';
 import CTABanner from '@/components/CTABanner';
+import ClassIcon from '@/components/ClassIcon';
 
 export const metadata: Metadata = {
   title: 'Yoga & Pilates Classes in the Highlands | Present Heart Living',
@@ -121,9 +122,11 @@ export default function LocationsPage() {
               <FadeIn key={loc.href} delay={i * 0.1}>
                 <Link
                   href={loc.href}
-                  className="group block bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all border border-mist/50 hover:border-sage/30"
+                  className="group flex flex-col h-full bg-white rounded-xl p-6 shadow-md border border-mist/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 hover:border-sage/30"
                 >
-                  <span className="text-3xl block mb-3">{loc.icon}</span>
+                  <div className="mb-4 p-2.5 bg-sage/8 rounded-lg w-fit shrink-0">
+                    <ClassIcon href={loc.href} />
+                  </div>
                   <h3 className="font-heading text-xl text-forest mb-2 group-hover:text-sage transition-colors">
                     {loc.title}
                   </h3>

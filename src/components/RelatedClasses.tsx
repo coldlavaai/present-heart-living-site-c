@@ -31,9 +31,9 @@ export default function RelatedClasses({
             <FadeIn key={cls.href} delay={i * 0.1}>
               <Link
                 href={cls.href}
-                className="group block bg-white rounded-xl p-6 shadow-md border border-mist/30 hover:border-sage/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                className="group flex flex-col h-full bg-white rounded-xl p-6 shadow-md border border-mist/30 hover:border-sage/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
               >
-                <div className="mb-4 p-2.5 bg-sage/8 rounded-lg w-fit">
+                <div className="mb-4 p-2.5 bg-sage/8 rounded-lg w-fit shrink-0">
                   <ClassIcon href={cls.href} />
                 </div>
                 <h3 className="font-heading text-lg text-forest group-hover:text-sage transition-colors mb-2">
