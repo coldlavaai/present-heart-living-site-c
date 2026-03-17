@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import FadeIn from './FadeIn';
+import ClassIcon from './ClassIcon';
 
 interface RelatedClass {
   title: string;
   href: string;
   description: string;
-  icon: string;
+  icon?: string;
 }
 
 export default function RelatedClasses({
@@ -30,9 +31,11 @@ export default function RelatedClasses({
             <FadeIn key={cls.href} delay={i * 0.1}>
               <Link
                 href={cls.href}
-                className="group block bg-white rounded-xl p-6 shadow-sm border border-mist/50 hover:border-sage/30 hover:shadow-md transition-all"
+                className="group block bg-white rounded-xl p-6 shadow-md border border-mist/30 hover:border-sage/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
               >
-                <div className="text-3xl mb-3">{cls.icon}</div>
+                <div className="mb-4 p-2.5 bg-sage/8 rounded-lg w-fit">
+                  <ClassIcon href={cls.href} />
+                </div>
                 <h3 className="font-heading text-lg text-forest group-hover:text-sage transition-colors mb-2">
                   {cls.title}
                 </h3>

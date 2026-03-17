@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FadeIn from './FadeIn';
+import ClassIcon from './ClassIcon';
 
 interface ClassCardProps {
   title: string;
@@ -31,11 +32,13 @@ export default function ClassCard({ title, description, href, icon, imageSrc, im
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
-        ) : icon ? (
+        ) : (
           <div className="pt-8 px-8">
-            <div className="text-4xl mb-4">{icon}</div>
+            <div className="mb-4 p-2.5 bg-sage/8 rounded-lg w-fit">
+              <ClassIcon href={href} />
+            </div>
           </div>
-        ) : null}
+        )}
         <div className={`flex-1 flex flex-col ${imageSrc ? 'p-6' : icon ? 'px-8 pb-8' : 'p-8'}`}>
           {!imageSrc && !icon && <div className="mb-4" />}
           <h3 className="font-heading text-xl text-forest mb-3 group-hover:text-sage transition-colors">
